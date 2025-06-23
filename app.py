@@ -387,7 +387,7 @@ You are Professor Great Brain. You are fair. The student response must show crit
 {{
   "passed": false,
   "explanation": "A dramatic and humorous story showing how the student failed. Use only simple quotes and avoid special characters.",
-  "score": 10,
+  "score": 98,
   "feedback": "Specific, clear, and constructive feedback. Use only simple quotes and avoid special characters."
 }}
 
