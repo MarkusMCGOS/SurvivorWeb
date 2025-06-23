@@ -274,7 +274,7 @@ body::before {
     transform: translateX(-50%);
     width: 300px;
     height: 150px;
-    background-image: url('https://static.wikia.nocookie.net/survivor/images/1/15/Survivor_48_Logo.PNG/revision/latest/scale-to-width-down/1200?cb=20250316235009');
+    background-image: url('Survivor_48_Logo.PNG');
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
