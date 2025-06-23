@@ -2,7 +2,7 @@ import json
 import os
 import re
 from google import genai
-from google.genai import types
+from google.generativeai import types
 
 # Initialize Gemini client
 GEMINI_API_KEY = "AIzaSyB9fjhhuKNno3zPftuZcwDbvzlc6eb345c"
