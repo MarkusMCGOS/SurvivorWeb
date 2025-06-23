@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evaluation - Group Dynamics 101: Survivor</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="question.css">
+    <link rel="stylesheet" href="evaluation.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">GROUP DYNAMICS 101: SURVIVOR</div>
+        <div id="scoreDisplay" class="score-display">Score: 0 | Streak: 0 | Questions: 0</div>
+        <div class="level-display">
+            <div class="level">Level <span id="levelNumber">1</span></div>
+            <div class="progress-bar">
+                <div id="progressFill" class="progress-fill"></div>
+            </div>
+        </div>
+        <div class="crafted-by">exquisitely crafted by <span class="tooltip-trigger">python<span class="tooltip">skibidi</span></span></div>
+    </nav>
+
+    <main class="container evaluation-container">
+        <div class="evaluation-card">
+            <div class="evaluation-header">
+                <h1>Evaluation Results</h1>
+                <div id="evaluationStatus" class="evaluation-status"></div>
+            </div>
+
+            <div class="evaluation-content">
+                <div class="question-review">
+                    <h2>Your Question</h2>
+                    <div id="questionText" class="question-text"></div>
+                    <div id="questionPoints" class="question-points"></div>
+                </div>
+
+                <div class="answer-review">
+                    <h2>Your Response</h2>
+                    <div id="answerText" class="answer-text"></div>
+                </div>
+
+                <div class="ai-evaluation">
+                    <h2>AI Evaluation</h2>
+                    <div id="evaluationScore" class="evaluation-score"></div>
+                    <div id="evaluationExplanation" class="evaluation-explanation"></div>
+                    <div id="evaluationFeedback" class="evaluation-feedback"></div>
+                </div>
+
+                <div class="video-section">
+                    <h2>What Happened in Survivor 48?</h2>
+                    <div id="questionExplanation" class="explanation-text">
+                    </div>
+                </div>
+            </div>
+
+            <div class="evaluation-actions">
+                <button id="nextQuestion" class="next-question">Next Question</button>
+                <button id="retryQuestion" class="retry-question">Try Again</button>
+            </div>
+        </div>
+    </main>
+
+    <script src="evaluation.js"></script>
+</body>
+</html> 

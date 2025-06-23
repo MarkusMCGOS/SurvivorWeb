@@ -1,0 +1,189 @@
+.evaluation-container {
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.evaluation-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 2rem;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.evaluation-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.evaluation-status {
+    font-size: 1.2rem;
+    font-weight: 600;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+}
+
+.evaluation-status.success {
+    background: rgba(46, 213, 115, 0.2);
+    color: #2ed573;
+}
+
+.evaluation-status.fail {
+    background: rgba(255, 71, 87, 0.2);
+    color: #ff4757;
+}
+
+.evaluation-content {
+    display: grid;
+    gap: 2rem;
+}
+
+.question-review,
+.answer-review,
+.ai-evaluation,
+.video-section {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 1.5rem;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.question-text,
+.answer-text {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin: 1rem 0;
+    padding: 1rem;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+}
+
+.evaluation-score {
+    font-size: 2rem;
+    font-weight: 700;
+    text-align: center;
+    margin: 1rem 0;
+    padding: 1rem;
+    border-radius: 8px;
+    background: linear-gradient(45deg, var(--survivor-blue), var(--survivor-orange));
+}
+
+.evaluation-explanation,
+.evaluation-feedback {
+    margin: 1rem 0;
+    padding: 1rem;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    line-height: 1.6;
+}
+
+.explanation-text {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin: 1rem 0;
+    padding: 1rem;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+}
+
+.video-container {
+    aspect-ratio: 16/9;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 1rem 0;
+}
+
+.coming-soon {
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.7);
+    text-align: center;
+}
+
+.evaluation-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.next-question,
+.retry-question {
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.next-question {
+    background: var(--survivor-orange);
+    color: white;
+}
+
+.retry-question {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.next-question:hover,
+.retry-question:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Animation for evaluation reveal */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.evaluation-card {
+    animation: slideIn 0.5s ease-out;
+}
+
+.result-indicator {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+    padding: 10px 15px;
+    border-radius: 8px;
+    font-size: 1.2em;
+    font-weight: 600;
+}
+
+.result-indicator.success {
+    background-color: rgba(40, 167, 69, 0.1);
+    color: #28a745;
+    border: 2px solid #28a745;
+}
+
+.result-indicator.failure {
+    background-color: rgba(220, 53, 69, 0.1);
+    color: #dc3545;
+    border: 2px solid #dc3545;
+}
+
+.result-icon {
+    font-size: 1.5em;
+}
+
+.result-text {
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+} 

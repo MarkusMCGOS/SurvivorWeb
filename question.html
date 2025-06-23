@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Group Dynamics Challenge - Survivor 48</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="question.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">GROUP DYNAMICS 101: SURVIVOR</div>
+        <div id="scoreDisplay" class="score-display">Score: 0 | Streak: 0 | Questions: 0</div>
+        <div class="level-display">
+            <div class="level">Level <span id="levelNumber">1</span></div>
+            <div class="progress-bar">
+                <div id="progressFill" class="progress-fill"></div>
+            </div>
+        </div>
+        <div class="crafted-by">exquisitely crafted by <span class="tooltip-trigger">python<span class="tooltip">skibidi</span></span></div>
+    </nav>
+
+    <main class="container question-container">
+        <div class="question-card">
+            <h1>Group Dynamics Challenge</h1>
+            <div class="question-content">
+                <p class="question-text">
+                    Loading question...
+                </p>
+                <ul class="question-points">
+                    <li>Loading points...</li>
+                </ul>
+            </div>
+            
+            <form id="answerForm" class="answer-form">
+                <div class="form-group">
+                    <label for="answer">Your Response</label>
+                    <div class="textarea-wrapper">
+                        <textarea 
+                            id="answer" 
+                            name="answer" 
+                            rows="6" 
+                            maxlength="5000" 
+                            placeholder="Type your response here..."
+                            required
+                        ></textarea>
+                        <div class="char-counter">
+                            <span id="charCount">0</span>/5000
+                        </div>
+                    </div>
+                </div>
+                <button type="submit" class="submit-button">Submit Response</button>
+            </form>
+
+            <div class="achievements">
+                <h3>Your Achievements</h3>
+                <div class="achievement-list">
+                    <div class="achievement" data-requirement="5">
+                        <span class="achievement-icon">🌟</span>
+                        <span class="achievement-name">Getting Started</span>
+                        <span class="achievement-desc">Answer 5 questions</span>
+                    </div>
+                    <div class="achievement" data-requirement="10">
+                        <span class="achievement-icon">🔥</span>
+                        <span class="achievement-name">On Fire</span>
+                        <span class="achievement-desc">Maintain a 5-question streak</span>
+                    </div>
+                    <div class="achievement" data-requirement="100">
+                        <span class="achievement-icon">💎</span>
+                        <span class="achievement-name">Master Strategist</span>
+                        <span class="achievement-desc">Score 100 points</span>
+                    </div>
+                    <div class="achievement" data-requirement="20">
+                        <span class="achievement-icon">🎯</span>
+                        <span class="achievement-name">Sharpshooter</span>
+                        <span class="achievement-desc">Get 3 perfect scores in a row</span>
+                    </div>
+                    <div class="achievement" data-requirement="50">
+                        <span class="achievement-icon">👑</span>
+                        <span class="achievement-name">Group Leader</span>
+                        <span class="achievement-desc">Reach level 5</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 python. All rights reserved.</p>
+        <p class="disclaimer">This course uses examples from Survivor 48 for educational purposes only. Survivor and all related content are trademarks of CBS Studios Inc. This course is not affiliated with, authorized by, or connected to CBS Studios Inc. or the Survivor franchise.</p>
+    </footer>
+
+    <script src="question.js"></script>
+    <script src="questions.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Remove updateQuestion() call since we use loadQuestion() in question.js
+        });
+    </script>
+</body>
+</html> 

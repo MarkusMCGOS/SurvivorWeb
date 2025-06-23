@@ -1,0 +1,424 @@
+.question-container {
+    padding: 4rem 2rem;
+    min-height: calc(100vh - 200px);
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.question-card {
+    background: var(--nav-bg);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 16px;
+    padding: 2.5rem;
+    width: 100%;
+    max-width: 800px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.question-card h1 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    background: linear-gradient(to right, var(--survivor-blue), var(--survivor-orange));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-align: center;
+}
+
+.question-content {
+    margin-bottom: 2.5rem;
+}
+
+.question-text {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: var(--text-primary);
+    margin-bottom: 1.5rem;
+}
+
+.question-points {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.question-points li {
+    position: relative;
+    padding-left: 1.5rem;
+    margin-bottom: 1rem;
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+}
+
+.question-points li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: var(--survivor-orange);
+}
+
+.answer-form {
+    margin-top: 2rem;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--text-primary);
+    font-weight: 500;
+}
+
+.textarea-wrapper {
+    position: relative;
+}
+
+textarea {
+    width: 100%;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    color: var(--text-primary);
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    line-height: 1.6;
+    resize: vertical;
+    transition: all 0.3s ease;
+}
+
+textarea:focus {
+    outline: none;
+    border-color: var(--survivor-orange);
+    background: rgba(255, 255, 255, 0.08);
+    box-shadow: 0 0 0 2px rgba(255, 77, 0, 0.2);
+}
+
+.char-counter {
+    position: absolute;
+    bottom: 0.5rem;
+    right: 1rem;
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+}
+
+.submit-button {
+    background: linear-gradient(135deg, var(--survivor-blue), var(--survivor-orange));
+    color: var(--text-primary);
+    border: none;
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.submit-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0, 102, 204, 0.3);
+}
+
+.submit-button:active {
+    transform: translateY(0);
+}
+
+@media (max-width: 768px) {
+    .question-container {
+        padding: 2rem 1rem;
+    }
+
+    .question-card {
+        padding: 1.5rem;
+    }
+
+    .question-card h1 {
+        font-size: 2rem;
+    }
+
+    .question-text {
+        font-size: 1.1rem;
+    }
+
+    .question-points li {
+        font-size: 1rem;
+    }
+}
+
+.score-display {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    font-weight: 600;
+    color: var(--survivor-orange);
+    border: 1px solid var(--survivor-orange);
+    margin: 0 1rem;
+}
+
+.achievements {
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.achievements h3 {
+    color: var(--survivor-orange);
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+.achievement-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+}
+
+.achievement {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 1rem;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    opacity: 0.5;
+}
+
+.achievement.unlocked {
+    opacity: 1;
+    border-color: var(--survivor-orange);
+    background: rgba(255, 77, 0, 0.1);
+    transform: scale(1.05);
+}
+
+.achievement-icon {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.achievement-name {
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 0.25rem;
+}
+
+.achievement-desc {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+}
+
+/* Animation for new achievements */
+@keyframes achievementUnlock {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1.05);
+    }
+}
+
+.achievement.unlocked {
+    animation: achievementUnlock 0.5s ease-out;
+}
+
+/* Loading animation */
+@keyframes loadingPulse {
+    0% {
+        opacity: 0.6;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0.6;
+    }
+}
+
+.question-text:empty::before,
+.question-points:empty::before {
+    content: 'Loading...';
+    animation: loadingPulse 1.5s infinite;
+    color: var(--text-secondary);
+}
+
+/* Success message animation */
+@keyframes slideIn {
+    from {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.success-message {
+    animation: slideIn 0.3s ease-out;
+}
+
+/* Error message animation */
+@keyframes shake {
+    0%, 100% {
+        transform: translateX(0);
+    }
+    25% {
+        transform: translateX(-5px);
+    }
+    75% {
+        transform: translateX(5px);
+    }
+}
+
+.error-message {
+    animation: shake 0.3s ease-out;
+}
+
+.evaluation-result {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 2rem;
+    border-radius: 12px;
+    margin: 2rem 0;
+    animation: slideIn 0.3s ease-out;
+}
+
+.evaluation-result.success {
+    border: 2px solid #00cc66;
+    background: rgba(0, 204, 102, 0.1);
+}
+
+.evaluation-result.fail {
+    border: 2px solid #ff4d00;
+    background: rgba(255, 77, 0, 0.1);
+}
+
+.evaluation-result h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: var(--text-primary);
+}
+
+.evaluation-result .score {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: var(--survivor-orange);
+}
+
+.evaluation-result .explanation {
+    margin-bottom: 1rem;
+    line-height: 1.6;
+    color: var(--text-primary);
+}
+
+.evaluation-result .feedback {
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+.evaluation-result .next-question {
+    background: linear-gradient(135deg, var(--survivor-blue), var(--survivor-orange));
+    color: var(--text-primary);
+    border: none;
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.evaluation-result .next-question:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0, 102, 204, 0.3);
+}
+
+.evaluation-result .next-question:active {
+    transform: translateY(0);
+}
+
+.level-display {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 1rem;
+    min-width: 150px;
+}
+
+.level {
+    font-weight: 600;
+    color: var(--survivor-orange);
+    margin-bottom: 0.5rem;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 8px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(to right, var(--survivor-blue), var(--survivor-orange));
+    width: 0%;
+    transition: width 0.5s ease;
+}
+
+/* Add animation for level up */
+@keyframes levelUp {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.level-up {
+    animation: levelUp 0.5s ease-out;
+}
+
+/* Add sparkle effect for perfect scores */
+@keyframes sparkle {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.perfect-score {
+    background: linear-gradient(45deg, #ffd700, #ff4d00, #ffd700);
+    background-size: 200% 200%;
+    animation: sparkle 2s ease infinite;
+}
