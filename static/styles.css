@@ -274,7 +274,7 @@ body::before {
     transform: translateX(-50%);
     width: 300px;
     height: 150px;
-    background-image: url('Survivor_48_Logo.PNG');
+    background-image: url('img/Survivor_48_Logo.PNG');
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
