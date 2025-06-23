@@ -1,12 +1,12 @@
 import json
 import os
 import re
-from google import genai
+import google.generativeai as genai
 from google.generativeai import types
 
 # Initialize Gemini client
 GEMINI_API_KEY = "AIzaSyB9fjhhuKNno3zPftuZcwDbvzlc6eb345c"
-client = genai.Client(api_key=GEMINI_API_KEY)
+genai.configure(api_key=GEMINI_API_KEY)
 
 def clean_text_for_json(text):
     """Clean text to make it JSON-safe."""
@@ -395,13 +395,15 @@ Do not pass the student unless the story shows they demonstrated leadership, det
 
         try:
             # Call Gemini API
-            response = client.models.generate_content(
-                model="gemini-2.5-flash-lite-preview-06-17",
-                contents=user_message,
-                config=types.GenerateContentConfig(
-                    system_instruction=system_instruction
-                )
+            model = genai.GenerativeModel(
+                model_name="gemini-2.5-flash-lite-preview-06-17",
+                generation_config=genai.types.GenerationConfig(
+                    temperature=0.7,
+                ),
+                system_instruction=system_instruction
             )
+
+            response = model.generate_content(user_message)
             
             print("Generated response from Gemini")
             
