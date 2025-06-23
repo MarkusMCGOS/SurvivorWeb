@@ -4,6 +4,8 @@ from pydantic import BaseModel
 import os
 import json
 from typing import Dict, List
+from fastapi.staticfiles import StaticFiles
+from fastapi.responses import FileResponse
 
 # Import the local Gemini evaluation function
 from app import evaluate_response
@@ -19,6 +21,24 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+# Serve static files (HTML, CSS, JS, etc.)
+app.mount("/static", StaticFiles(directory="static"), name="static")
+
+# Serve index.html at root
+@app.get("/")
+def read_index():
+    return FileResponse(os.path.join("static", "index.html"))
+
+# Serve question.html
+@app.get("/question.html")
+def read_question():
+    return FileResponse(os.path.join("static", "question.html"))
+
+# Serve evaluation.html
+@app.get("/evaluation.html")
+def read_evaluation():
+    return FileResponse(os.path.join("static", "evaluation.html"))
 
 # Define request model
 class EvaluationRequest(BaseModel):
