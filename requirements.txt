@@ -1,15 +1,10 @@
-torch
-transformers
-accelerate
-sentencepiece
-protobuf
-huggingface_hub
-scikit-build-core
-json5
-packaging
-modal>=0.61.0
+# Web backend
 fastapi
-uvicorn
-requests
-google-generativeai
+uvicorn[standard]
+gunicorn
 pydantic
+requests
+
+# Google Gemini API
+google-generativeai
+protobuf
