@@ -193,7 +193,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         try {
             console.log('Sending request to server...');
-            const response = await fetch('http://localhost:8000/evaluate', {
+            const response = await fetch('https://survivorweb.onrender.com:8000/evaluate', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
